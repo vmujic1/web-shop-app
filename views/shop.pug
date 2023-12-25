@@ -1,0 +1,23 @@
+extends layouts/main-layout.pug
+
+block content
+    main
+        if prods.length > 0
+            h1 List of products:
+            .grid
+                each product in prods
+                    article.card.product-item
+                        header.card__header
+                            h1.product__title #{product.title}
+                        .card__image
+                            img(src="https://mvinfo.hr/_mvshop/public/data/image/2/14619.jpg" alt="Book")
+                        .card__content
+                            h2.product__price $20
+                            p.product__description Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos, debitis! 
+                        .card__actions
+                            button Add to cart
+        else
+            h1 No products
+
+
+
